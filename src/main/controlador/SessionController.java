@@ -1,12 +1,10 @@
-package controlador;
+package main.controlador;
 
-import modelo.Usuario;      //aqui retire el import ArrayList, ya que a partir de ahora nos manejaremos dentro del archivo
+import main.modelo.Usuario;      //aqui retire el import ArrayList, ya que a partir de ahora nos manejaremos dentro del archivo
                             //JSON como el principal manager del programa, y por lo tanto, no necesitaremos manejar una
                             // lista de usuarios dentro de esta clase, sino que se consultara directamente al JSON para
                             // validar las credenciales de los usuarios. :D
-import modelo.Estudiante;
 import java.util.List;
-import persistencia.JsonManager;
 
 
 public class SessionController {

@@ -1,8 +1,8 @@
-package vista;
+package main.vista;
 
-import controlador.CasilleroController;
-import controlador.SessionController;
-import modelo.Casillero;
+import main.controlador.CasilleroController;
+import main.controlador.SessionController;
+import main.modelo.Casillero;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ public class MenuEstudiante {
 
     public MenuEstudiante(SessionController session) {
         this.session = session;
-        // Instanciamos el controlador que carga los datos desde el archivo JSON
+        // Instanciamos el main.controlador.controlador que carga los datos desde el archivo JSON
         this.casilleroCtrl = new CasilleroController();
 
         frame.setSize(600, 400);
@@ -109,7 +109,7 @@ public class MenuEstudiante {
         dialog.setLayout(new BorderLayout());
         dialog.setLocationRelativeTo(frame);
 
-        // Obtenemos los datos frescos desde el controlador
+        // Obtenemos los datos frescos desde el main.controlador.controlador
         Casillero c = casilleroCtrl.obtenerTodosLosCasilleros().get(numeroCasillero - 1);
 
         DefaultListModel<String> modeloLista = new DefaultListModel<>();

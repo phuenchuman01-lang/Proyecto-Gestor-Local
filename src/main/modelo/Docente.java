@@ -1,4 +1,4 @@
-package modelo;
+package main.modelo;
 
 public class Docente extends Usuario {
     public Docente(String username, String password) {

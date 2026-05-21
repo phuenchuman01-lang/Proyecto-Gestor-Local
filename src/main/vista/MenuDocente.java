@@ -1,8 +1,8 @@
-package vista;
+package main.vista;
 
-import controlador.CasilleroController;
-import controlador.SessionController;
-import modelo.Casillero;
+import main.controlador.CasilleroController;
+import main.controlador.SessionController;
+import main.modelo.Casillero;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +16,7 @@ public class MenuDocente {
 
     public MenuDocente(SessionController session) {
         this.session = session;
-        // Instanciamos el controlador para leer los casilleros desde el JSON
+        // Instanciamos el main.controlador.controlador para leer los casilleros desde el JSON
         this.casilleroCtrl = new CasilleroController();
 
         frame.setSize(800, 600);
@@ -101,7 +101,7 @@ public class MenuDocente {
                         casilleroCtrl.enlazarEstudianteACasillero(numero, username.trim());
                         JOptionPane.showMessageDialog(dialog, "¡Casillero enlazado exitosamente!");
                         dialog.dispose();
-                        cargarVistaCasilleros(); // Refrescar la vista de botones
+                        cargarVistaCasilleros(); // Refrescar la main.controlador.controlador.vista de botones
                     } catch (Exception ex) {
                         JOptionPane.showMessageDialog(dialog, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                     }

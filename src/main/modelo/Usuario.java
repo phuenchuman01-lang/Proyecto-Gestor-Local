@@ -1,4 +1,4 @@
-package modelo;     //Katherine, necesito que crees la super clase, es la clase padre de Estudiante y Docente, y es
+package main.modelo;     //Katherine, necesito que crees la super clase, es la clase padre de Estudiante y Docente, y es
                     // la que se encarga de validar las credenciales de los usuarios. :D
 
 public class Usuario {      //por aqui falta poner la classe como abstracta, ya que se usara de plantilla para las distintas cuentas de usuario de los alumnos. solamente eso.
