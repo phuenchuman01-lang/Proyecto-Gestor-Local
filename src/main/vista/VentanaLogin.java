@@ -1,6 +1,6 @@
-package vista;
+package main.vista;
 
-import controlador.SessionController;
+import main.controlador.SessionController;
 import javax.swing.*;
 import java.awt.*;
 

@@ -1,7 +1,7 @@
-package controlador;
+package main.controlador;
 
-import modelo.Casillero;
-import persistencia.JsonManager;
+import main.modelo.Casillero;
+import main.persistencia.JsonManager;
 import java.util.List;
 
 public class CasilleroController {
@@ -12,7 +12,7 @@ public class CasilleroController {
         this.listaCasilleros = JsonManager.cargarCasilleros();
     }
 
-    public List<Casillero> obtenerTodosLosCasilleros() {        //Retorna los casilleros para la vista del admin.
+    public List<Casillero> obtenerTodosLosCasilleros() {        //Retorna los casilleros para la main.controlador.controlador.vista del admin.
         return this.listaCasilleros;
     }
 
