@@ -15,22 +15,22 @@ Este repositorio contiene el prototipo funcional correspondiente al **Avance 02*
 ## Descripción del Modelo de Clases
 1. Usuario
 Modela a los estudiantes registrados en la institución facultados para solicitar el uso de casillas seguros.
-- **Atributos: rut (String), nombre (String), correo (String), carrera (String).
-- **Encapsulamiento: Todos los atributos son privados (private) con acceso controlado mediante métodos Getters y Setters.
+- Atributos: rut (String), nombre (String), correo (String), carrera (String).
+- Encapsulamiento: Todos los atributos son privados (private) con acceso controlado mediante métodos Getters y Setters.
 
 2. Casillero
 Representa los casilleros físicos distribuidos en la universidad.
-- **Atributos: idCasillero (String), estado (String: Disponible, Ocupado, Mantenimiento), inventario (List).
-- **Relación: Mantiene una relación de Asociación/Agregación con la clase ObjetoInventario para monitorear qué elementos contiene en tiempo real de forma dinámica.
+- Atributos: idCasillero (String), estado (String: Disponible, Ocupado, Mantenimiento), inventario (List).
+- Relación: Mantiene una relación de Asociación/Agregación con la clase ObjetoInventario para monitorear qué elementos contiene en tiempo real de forma dinámica.
   
 3. ObjetoInventario
 Clase que permite declarar y categorizar los artículos individuales que introduce un alumno para resguardo.
-- **Atributos: idObjeto (String), descripcion (String), categoria (String).
+- Atributos: idObjeto (String), descripcion (String), categoria (String).
   
 4. AsignacionCasillero
 Clase de relación que actúa como registro o contrato entre un estudiante y un espacio físico específico.
-- **Atributos: estudiante (Usuario), casillero (Casillero), fechaAsignacion (LocalDate).
-- **Lógica de Negocio: Al instanciarse, modifica de forma automática el estado del casillero vinculado a "Ocupado".
+- Atributos: estudiante (Usuario), casillero (Casillero), fechaAsignacion (LocalDate).
+- Lógica de Negocio: Al instanciarse, modifica de forma automática el estado del casillero vinculado a "Ocupado".
 
 ## 🏗️ Estructura del Proyecto
 
