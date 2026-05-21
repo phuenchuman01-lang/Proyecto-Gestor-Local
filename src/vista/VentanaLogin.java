@@ -59,7 +59,7 @@ public class VentanaLogin {
         if (session.iniciarSesion(u, p)) {
             frame.dispose();
 
-            // ROLES ACTIVADO
+            // ROLES
             if (session.getUsuarioActual().getRol().equals("DOCENTE")) {
                 new MenuDocente(session).mostrarVentana();
             } else {
