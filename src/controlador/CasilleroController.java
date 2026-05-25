@@ -31,15 +31,15 @@ public class CasilleroController {
 
     public void registrarCasillero(int numero, String username) {
         Casillero c = obtenerCasilleroPorNumero(numero);
-        if (c == null) throw new RuntimeException("Casillero no existente");
+        if (c == null) throw new IllegalArgumentException("Casillero no existente");
 
         if (!c.estaDisponible()){
-            throw new RuntimeException("Casillero ya ocupado");
+            throw new IllegalArgumentException("Casillero ya ocupado");
         }
 
         Casillero casilleroPrevio = buscarCasilleroPorEstudiante(username);
         if (casilleroPrevio != null) {
-            throw new RuntimeException("El estudiante ya posee un casillero");
+            throw new IllegalStateException("El estudiante ya posee un casillero");
         }
 
         c.ocupar(username);
@@ -82,15 +82,15 @@ public class CasilleroController {
         Casillero destino = obtenerCasilleroPorNumero(numeroDestino);
 
         if (origen == null || destino == null) {
-            throw new RuntimeException("Uno o ambos casilleros no han sido encontrados.");
+            throw new IllegalArgumentException("Uno o ambos casilleros no han sido encontrados.");
         }
 
         if (origen.estaDisponible()){
-            throw new RuntimeException("El casillero esta vacío, no hay objetos que mover");
+            throw new IllegalStateException("El casillero esta vacío, no hay objetos que mover");
         }
 
         if (!destino.estaDisponible()){
-            throw new IllegalArgumentException("El casillero esta ocupado por otro estudiante");
+            throw new IllegalStateException("El casillero esta ocupado por otro estudiante");
         }
 
         String dueño = origen.getUsernameDueño();
@@ -106,10 +106,17 @@ public class CasilleroController {
     }
 
     public void enlazarEstudianteACasillero(int numero, String username) {
-        // Validar que exista el casillero y que esté disponible.
-        // Verificar que el estudiante no tenga ya otro casillero.
-        // Ocupar el casillero.
-        // Guardar en el JSON.
+        Casillero c = obtenerCasilleroPorNumero(numero);
+
+        if (c == null) throw new IllegalArgumentException("Casillero no encontrado.");
+        if (!c.estaDisponible()) throw  new IllegalStateException("El casillero se encuentra ocupado");
+
+        Casillero casilleroPrevio = buscarCasilleroPorEstudiante(username);
+        if (casilleroPrevio != null) {
+            throw new IllegalStateException("El estudiante ya tiene otro casillero enlazado.");
+        }
+        c.ocupar(username);
+        JsonManager.guardarCasilleros(listaCasilleros);
     }
 
     //metodo auxiliar
