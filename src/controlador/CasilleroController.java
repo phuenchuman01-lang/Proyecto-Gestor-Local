@@ -78,12 +78,31 @@ public class CasilleroController {
     // ==========================================
 
     public void moverContenidoDeCasillero(int numeroOrigen, int numeroDestino) {
-        // Obtener casillero 'origen' y 'destino'. Validar que ambos existan.
-        // Si el origen estaDisponible(), lanzar IllegalStateException (no hay nada que mover).
-        // Si el destino NO esta Disponible, lanzar IllegalStateException (colisión).
-        // Pasar los objetos al nuevo casillero de destino y verificar que este correcto para poder liberar el casillero de origen
-        // Liberar el casillero de origen.
-        // Guardar en el JSON.
+        Casillero origen = obtenerCasilleroPorNumero(numeroOrigen);
+        Casillero destino = obtenerCasilleroPorNumero(numeroDestino);
+
+        if (origen == null || destino == null) {
+            throw new RuntimeException("Uno o ambos casilleros no han sido encontrados.");
+        }
+
+        if (origen.estaDisponible()){
+            throw new RuntimeException("El casillero esta vacío, no hay objetos que mover");
+        }
+
+        if (!destino.estaDisponible()){
+            throw new IllegalArgumentException("El casillero esta ocupado por otro estudiante");
+        }
+
+        String dueño = origen.getUsernameDueño();
+        List<String> objetos = origen.getObjetos();
+
+        destino.ocupar(dueño);
+        for (String obj : objetos) {
+            destino.agregarObjeto(obj);
+        }
+
+        origen.liberar();
+        JsonManager.guardarCasilleros(listaCasilleros);
     }
 
     public void enlazarEstudianteACasillero(int numero, String username) {
