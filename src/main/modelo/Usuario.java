@@ -1,24 +1,36 @@
-package main.modelo;     //Katherine, necesito que crees la super clase, es la clase padre de Estudiante y Docente, y es
-                    // la que se encarga de validar las credenciales de los usuarios. :D
+package main.modelo;
 
-public class Usuario {      //por aqui falta poner la classe como abstracta, ya que se usara de plantilla para las distintas cuentas de usuario de los alumnos. solamente eso.
+public abstract class Usuario {
     private String username;
     private String password;
     private String rol;
+    private String matricula;
+    private String nombre;
+    private String carrera;
 
-
-    public Usuario(String username, String password, String rol) {
+    public Usuario(String matricula, String nombre, String username, String password, String rol, String carrera) {
+        this.matricula = matricula;
+        this.nombre = nombre;
         this.username = username;
         this.password = password;
         this.rol = rol;
+        this.carrera = carrera;
     }
 
     public boolean validarCredenciales(String u, String p) {
         return this.username.equals(u) && this.password.equals(p);
     }
 
-    public String getRol() { return this.rol; }     //Por aqui me encargue de agregar unicamente el public stringPassword. y reordenar un poco el codigo.
-    public String getUsername() { return this.username; }
-    public String getPassword() { return this.password; }
+    public String getUsername() { return username; }
+    public void setUsername(String username) { this.username = username; }
+    public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
+    public String getRol() { return rol; }
+    public void setRol(String rol) { this.rol = rol; }
+    public String getMatricula() { return matricula; }
+    public void setMatricula(String matricula) { this.matricula = matricula; }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    public String getCarrera() { return carrera; }
+    public void setCarrera(String carrera) { this.carrera = carrera; }
 }
