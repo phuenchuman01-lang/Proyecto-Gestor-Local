@@ -40,7 +40,7 @@ public class JsonManager {
 
         if (contenido == null || contenido.trim().isEmpty()) {
             // Si el archivo no existe, creamos el admin por defecto
-            lista.add(new Docente("admin", "admin123"));
+            lista.add(new Docente("0000", "Administrador", "admin", "admin123"));
             guardarUsuarios(lista);
             return lista;
         }
@@ -53,9 +53,9 @@ public class JsonManager {
             String rol = extraerValor(bloque, "rol");
 
             if ("DOCENTE".equals(rol)) {
-                lista.add(new Docente(user, pass));
+                lista.add(new Docente("Pendiente", "Docente Importado", user, pass));
             } else {
-                lista.add(new Estudiante(user, pass));
+                lista.add(new Estudiante("Pendiente", "Estudiante Importado", user, pass, "Sin Carrera"));
             }
         }
         return lista;

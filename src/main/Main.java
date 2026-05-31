@@ -8,7 +8,7 @@ public class Main {
 
         // Aplicamos Polimorfismo
         // apuntando a una instancia de la subclase concreta Estudiante
-        Usuario user1 = new Estudiante("katherine", "ufro2026");
+        Usuario user1 = new Estudiante("0000", "Katherine", "katherine", "ufro2026", "Ingeniería");
 
         System.out.println("--- Bienvenido a Casillas-Seguras (Prueba de Consola) ---");
         System.out.println("Usuario registrado: " + user1.getUsername());
