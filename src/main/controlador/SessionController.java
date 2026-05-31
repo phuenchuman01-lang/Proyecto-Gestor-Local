@@ -1,12 +1,9 @@
 package main.controlador;
 
-import main.modelo.Usuario;      //aqui retire el import ArrayList, ya que a partir de ahora nos manejaremos dentro del archivo
-                            //JSON como el principal manager del programa, y por lo tanto, no necesitaremos manejar una
-                            // lista de usuarios dentro de esta clase, sino que se consultara directamente al JSON para
-                            // validar las credenciales de los usuarios. :D
-import modelo.Estudiante;
+import main.modelo.Usuario;
 import java.util.List;
-import persistencia.JsonManager;
+import main.modelo.Estudiante;
+import main.persistencia.JsonManager;
 
 
 public class SessionController {
@@ -42,9 +39,8 @@ public class SessionController {
             }
         }
 
-        Usuario nuevoEstudiante = new Usuario(user, password, "ESTUDIANTE");
+        Usuario nuevoEstudiante = new Estudiante("Pendiente", "Sin Nombre", user, password, "Sin Carrera");
         usuariosRegistrados.add(nuevoEstudiante);
-
         JsonManager.guardarUsuarios(usuariosRegistrados);
     }
 
