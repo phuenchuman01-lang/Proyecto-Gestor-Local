@@ -6,18 +6,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SessionControllerTest {
 
-    private SessionController controlador;
+    private main.controlador.SessionController controlador;
 
     @BeforeEach
     void setUp() {
-
-        controlador = new SessionController();
-
+        controlador = new main.controlador.SessionController();
     }
 
     @Test
     void testRegistrarEstudianteCamposVaciosLanzaExcepcion() {
-
         assertThrows(IllegalArgumentException.class, () -> {
             controlador.registrarEstudiante("", "123");
         }, "Debería lanzar excepción si el usuario está vacío");
@@ -25,15 +22,12 @@ class SessionControllerTest {
         assertThrows(IllegalArgumentException.class, () -> {
             controlador.registrarEstudiante("Pablo", null);
         }, "Debería lanzar excepción si la contraseña es null");
-
     }
 
     @Test
     void testIniciarSesionCamposVaciosRetornaFalse() {
-
         assertFalse(controlador.iniciarSesion("", "1234"), "Usuario vacío debe fallar");
         assertFalse(controlador.iniciarSesion(null, null), "Campos nulos deben fallar");
-
     }
 
     @Test
@@ -43,8 +37,8 @@ class SessionControllerTest {
 
         try {
             controlador.registrarEstudiante(testUser, testPass);
-        } catch (IllegalArgumentException _) {
-
+        } catch (IllegalArgumentException e) {
+            // Excepción capturada correctamente con 'e'
         }
 
         Exception excepcion = assertThrows(IllegalArgumentException.class, () -> {
@@ -57,11 +51,9 @@ class SessionControllerTest {
 
     @Test
     void testFlujoCompletoLoginYCerrarSesion() {
-
         boolean loginExitoso = controlador.iniciarSesion("admin", "admin123");
 
         if (loginExitoso) {
-
             assertTrue(controlador.hayUsuario(), "El sistema debe indicar que hay un usuario activo");
             assertEquals("admin", controlador.getNombreUsuario(), "El nombre de usuario debe ser admin");
 
