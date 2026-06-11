@@ -1,7 +1,7 @@
 package main;
 
-import main.modelo.Usuario;
-import main.modelo.Estudiante;
+import modelo.Usuario;
+import modelo.Estudiante;
 
 public class Main {
     public static void main(String[] args) {

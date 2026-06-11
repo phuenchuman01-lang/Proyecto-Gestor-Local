@@ -1,7 +1,7 @@
-package main.controlador;
+package controlador;
 
-import main.modelo.Casillero;
-import main.persistencia.JsonManager;
+import modelo.Casillero;
+import persistencia.JsonManager;
 import java.util.List;
 
 public class CasilleroController {

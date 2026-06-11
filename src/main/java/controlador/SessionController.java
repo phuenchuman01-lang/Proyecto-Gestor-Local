@@ -1,9 +1,9 @@
-package main.controlador;
+package controlador;
 
-import main.modelo.Usuario;
+import modelo.Usuario;
 import java.util.List;
-import main.modelo.Estudiante;
-import main.persistencia.JsonManager;
+import modelo.Estudiante;
+import persistencia.JsonManager;
 
 
 public class SessionController {

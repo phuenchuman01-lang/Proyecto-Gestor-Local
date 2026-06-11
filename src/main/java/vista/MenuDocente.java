@@ -1,8 +1,8 @@
-package main.vista;
+package vista;
 
-import main.controlador.CasilleroController;
-import main.controlador.SessionController;
-import main.modelo.Casillero;
+import controlador.CasilleroController;
+import controlador.SessionController;
+import modelo.Casillero;
 
 import javax.swing.*;
 import java.awt.*;

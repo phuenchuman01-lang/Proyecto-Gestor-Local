@@ -1,10 +1,10 @@
-package main.persistencia;   //JSON principal donde consultamos los datos de los usuarios y de los casilleros
+package persistencia;   //JSON principal donde consultamos los datos de los usuarios y de los casilleros
                         //Como el nombre lo dice, el Manager del programa. :D
 //Ver si es que falto algo, por si acaso. xd
-import main.modelo.Usuario;
-import main.modelo.Estudiante;
-import main.modelo.Docente;
-import main.modelo.Casillero;
+import modelo.Usuario;
+import modelo.Estudiante;
+import modelo.Docente;
+import modelo.Casillero;
 
 import java.io.*;
 import java.util.ArrayList;
