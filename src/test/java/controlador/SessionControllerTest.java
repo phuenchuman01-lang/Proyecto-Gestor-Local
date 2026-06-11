@@ -6,11 +6,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SessionControllerTest {
 
-    private main.controlador.SessionController controlador;
+    private controlador.SessionController controlador;
 
     @BeforeEach
     void setUp() {
-        controlador = new main.controlador.SessionController();
+        controlador = new controlador.SessionController();
     }
 
     @Test
