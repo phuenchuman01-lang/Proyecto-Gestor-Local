@@ -4,9 +4,9 @@
 
 # Proyecto Casillas-Seguras
 
-Este repositorio contiene el proyecto en equipo realizado en la asignatura de Programacion Orientada a Objetos (POO) en la Universidad de la Frontera (UFRO). una App para el manejo y distribucion de inventario para casilleros. El funcionamiento principal de nuestra app Casillas-Seguras es que los estudiantes puedan registrarse a una cuenta con nombre y contraseña, asignar su casillero correspondiente, y organizar su inventario personal. con el apoyo de los creadores y funcionarios de la UFRO para brindar seguridad y vericidad a los casilleros. El proyecto aun sigue en desarrollo...
+Este repositorio contiene el proyecto en equipo realizado en la asignatura de Programacion Orientada a Objetos (POO) en la Universidad de la Frontera (UFRO). una App para el manejo y distribucion de inventario para casilleros. El funcionamiento principal de nuestra app Casillas-Seguras es que los estudiantes puedan registrarse a una cuenta con nombre y contraseña, asignar su casillero correspondiente, y organizar su inventario personal. con el apoyo de los creadores y funcionarios. El proyecto aun sigue en desarrollo...
 
-> **Version:** Alpha  
+> **Version:** Beta  
 > **Status:** Done
 
 ### Integrantes
@@ -15,7 +15,7 @@ Este repositorio contiene el proyecto en equipo realizado en la asignatura de Pr
 - [Patricio Huenchuman Calful](https://github.com/phuenchuman01-lang)
 
 > [!NOTE]
-> La app aun sigue en desarrollo, actualizaremos con mas avances pronto.
+> El programa esta habilitado para usar, activando el Launcher dentro de src/
 
 
 ## Desarrollo Avance 1
@@ -26,8 +26,18 @@ Este repositorio contiene el proyecto en equipo realizado en la asignatura de Pr
 
 ### Resumen Avance 1  
 
-Primera version basada en metodos y manejo de Interfaz Grafica de Usuario [GUI].
+Primera version basada en ventanas y navegabilidad de Interfaz Grafica de Usuario [GUI].
 
 ## Desarrollo avance 2  
 
-Coming soon....
+* Aplicacion de logica, conexion y mejora de navegacion dentro del programa. Donde ahora se cumple con el proposito de cada rol Estudiante o Admin, asignar y gestionar 1 entre 10 casilleros disponibles, ingresar objetos y mantener persistencia en los datos del casillero asignado, su usuario relacionado, y los objetos que contiene en un Json.
+* Aplicacion de conceptos de Herencia, Diagramas UML aprendidos en clase.
+* Cambio a entorno Maven.
+
+### Resumen avance 2
+
+Aplicacion de logica y navegabilidad para que el programa cumpla con su proposito de gestionar casilleros para los usuarios Alumno.
+
+## Desarrollo Avance 3
+
+coming soon...
