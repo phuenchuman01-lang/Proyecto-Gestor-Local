@@ -14,7 +14,7 @@ public class VentanaRegistro {
 
     public VentanaRegistro(SessionController session) {
         this.session = session;
-        frame = new JFrame("Casillas Seguras - Nuevo Estudiante");
+        frame = new JFrame("Gestor Local - Nuevo Estudiante");
         frame.setSize(400, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new GridBagLayout());
@@ -59,7 +59,7 @@ public class VentanaRegistro {
 
             session.registrarEstudiante(u, p);
             JOptionPane.showMessageDialog(frame, "¡Estudiante registrado con éxito!");
-            volverAlLogin(); // Si sale bien, lo mandamos a loguearse
+            volverAlLogin();
 
         } catch (IllegalArgumentException ex) {
             JOptionPane.showMessageDialog(frame, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);

@@ -9,21 +9,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MenuEstudiante {
-    private JFrame frame = new JFrame("Panel de Estudiante - Casillas Seguras");
+    private JFrame frame = new JFrame("Panel de Estudiante - Gestor Local");
     private SessionController session;
     private CasilleroController casilleroCtrl;
     private JPanel panelCentro;
 
     public MenuEstudiante(SessionController session) {
         this.session = session;
-        // Instanciamos el main.controlador.controlador que carga los datos desde el archivo JSON
         this.casilleroCtrl = new CasilleroController();
 
         frame.setSize(600, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
 
-        JLabel titulo = new JLabel("Bienvenido Alumno: " + session.getUsuarioActual().getUsername(), SwingConstants.CENTER);
+        JLabel titulo = new JLabel("Bienvenido Usuario: " + session.getUsuarioActual().getUsername(), SwingConstants.CENTER);
         titulo.setFont(new Font("Arial", Font.BOLD, 20));
         frame.add(titulo, BorderLayout.NORTH);
 
@@ -37,8 +36,6 @@ public class MenuEstudiante {
             new VentanaLogin(session).mostrarVentana();
         });
         frame.add(btnCerrarSesion, BorderLayout.SOUTH);
-
-        // Llamamos al método que decide qué botón mostrar
         cargarOpcionesCasillero();
     }
 
@@ -72,7 +69,6 @@ public class MenuEstudiante {
 
     private void mostrarVentanaRegistro() {
         List<String> opciones = new ArrayList<>();
-        // Mostramos la lista para que el alumno vea cuáles están disponibles y cuáles no
         for (Casillero c : casilleroCtrl.obtenerTodosLosCasilleros()) {
             if (c.estaDisponible()) {
                 opciones.add("Casillero " + c.getNumero() + " - DISPONIBLE");
@@ -108,8 +104,6 @@ public class MenuEstudiante {
         dialog.setSize(400, 300);
         dialog.setLayout(new BorderLayout());
         dialog.setLocationRelativeTo(frame);
-
-        // Obtenemos los datos frescos desde el main.controlador.controlador
         Casillero c = casilleroCtrl.obtenerTodosLosCasilleros().get(numeroCasillero - 1);
 
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
@@ -148,7 +142,7 @@ public class MenuEstudiante {
             if (confirm == JOptionPane.YES_OPTION) {
                 casilleroCtrl.liberarCasillero(numeroCasillero);
                 dialog.dispose();
-                cargarOpcionesCasillero(); // Vuelve al botón de "Registrar"
+                cargarOpcionesCasillero();
             }
         });
 
