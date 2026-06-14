@@ -16,7 +16,6 @@ public class MenuDocente {
 
     public MenuDocente(SessionController session) {
         this.session = session;
-        // Instanciamos el main.controlador.controlador para leer los casilleros desde el JSON
         this.casilleroCtrl = new CasilleroController();
 
         frame.setSize(800, 600);
@@ -40,8 +39,6 @@ public class MenuDocente {
             new VentanaLogin(session).mostrarVentana();
         });
         frame.add(btnCerrarSesion, BorderLayout.SOUTH);
-
-        // Dibujamos los casilleros
         cargarVistaCasilleros();
     }
 
@@ -58,7 +55,6 @@ public class MenuDocente {
 
             JLabel lblEstado = new JLabel(c.estaDisponible() ? "DISPONIBLE" : "Dueño: " + c.getUsernameDueño(), SwingConstants.CENTER);
 
-            // Colores visuales para identificar rápidamente el estado
             if (c.estaDisponible()) {
                 btnCasillero.setBackground(new Color(144, 238, 144)); // Verde claro
             } else {

@@ -1,6 +1,5 @@
-package persistencia;   //JSON principal donde consultamos los datos de los usuarios y de los casilleros
-                        //Como el nombre lo dice, el Manager del programa. :D
-//Ver si es que falto algo, por si acaso. xd
+package persistencia;
+
 import modelo.Usuario;
 import modelo.Estudiante;
 import modelo.Docente;
@@ -39,7 +38,6 @@ public class JsonManager {
         String contenido = leerArchivo(RUTA_USUARIOS);
 
         if (contenido == null || contenido.trim().isEmpty()) {
-            // Si el archivo no existe, creamos el admin por defecto
             lista.add(new Docente("0000", "Administrador", "admin", "admin123"));
             guardarUsuarios(lista);
             return lista;
@@ -52,7 +50,7 @@ public class JsonManager {
             String pass = extraerValor(bloque, "password");
             String rol = extraerValor(bloque, "rol");
 
-            if ("DOCENTE".equals(rol)) {
+            if ("DOCENTE".equalsIgnoreCase(rol)) {
                 lista.add(new Docente("Pendiente", "Docente Importado", user, pass));
             } else {
                 lista.add(new Estudiante("Pendiente", "Estudiante Importado", user, pass, "Sin Carrera"));
@@ -93,7 +91,6 @@ public class JsonManager {
         List<Casillero> lista = new ArrayList<>();
         String contenido = leerArchivo(RUTA_CASILLEROS);
 
-        // Inicializamos los 10 por defecto
         if (contenido == null || contenido.trim().isEmpty()) {
             for (int i = 1; i <= 10; i++) {
                 lista.add(new Casillero(i));

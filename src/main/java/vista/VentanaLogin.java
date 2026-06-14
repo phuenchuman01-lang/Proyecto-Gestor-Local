@@ -16,7 +16,7 @@ public class VentanaLogin {
     public VentanaLogin(SessionController session) {
         this.session = session;
 
-        frame = new JFrame("Casillas Seguras - Inicio de Sesión");
+        frame = new JFrame("Gestor Local - Inicio de Sesión");
         frame.setSize(800, 600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new GridBagLayout());
@@ -60,7 +60,7 @@ public class VentanaLogin {
             frame.dispose();
 
             // ROLES
-            if (session.getUsuarioActual().getRol().equals("DOCENTE")) {
+            if (session.getUsuarioActual().getRol().equalsIgnoreCase("DOCENTE")) {
                 new MenuDocente(session).mostrarVentana();
             } else {
                 new MenuEstudiante(session).mostrarVentana();
