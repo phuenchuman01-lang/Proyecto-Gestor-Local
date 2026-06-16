@@ -2,9 +2,9 @@
   <img width="500" height="170" alt="Ufrodark" src="https://github.com/user-attachments/assets/19dee791-9a5a-473b-a55f-6a091a1b6298" />
 </div>
 
-# Proyecto Casillas-Seguras
+# Proyecto Local Gestor
 
-Este repositorio contiene el proyecto en equipo realizado en la asignatura de Programacion Orientada a Objetos (POO) en la Universidad de la Frontera (UFRO). una App para el manejo y distribucion de inventario para casilleros. El funcionamiento principal de nuestra app Casillas-Seguras es que los estudiantes puedan registrarse a una cuenta con nombre y contraseña, asignar su casillero correspondiente, y organizar su inventario personal. con el apoyo de los creadores y funcionarios. El proyecto aun sigue en desarrollo...
+Este repositorio contiene el proyecto en equipo realizado en la asignatura de Programacion Orientada a Objetos (POO) en la Universidad de la Frontera (UFRO). una App para el manejo y distribucion de inventario para casilleros. El funcionamiento principal de nuestra app Local Gestor es que los estudiantes puedan registrarse a una cuenta con nombre y contraseña, asignar su casillero correspondiente, y organizar su inventario personal. con el apoyo de los creadores y funcionarios. El proyecto aun sigue en desarrollo...
 
 > **Version:** Beta  
 > **Status:** Done
