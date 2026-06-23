@@ -1,49 +1,28 @@
-# 🔒 Casillas-Seguras: Sistema de Gestión de Casilleros Universitarios
+<div align="center">
+  <img src="https://raw.githubusercontent.com/ufrontera/logos/master/ufro-logo.png" alt="Universidad de la Frontera" width="500"/>
+</div>
 
-Proyecto de desarrollo de software enfocado en resolver la problemática de asignación y control de inventario de los casilleros estudiantiles dentro del campus de la **Universidad de la Frontera (UFRO)**. 
+# Proyecto Local Gestor - Rama: dev-kathy/casillas-seguras
+
+Este repositorio contiene el avance y desarrollo de la rama enfocada en la gestión segura de casilleros, realizada para la asignatura de **Programación Orientada a Objetos (POO)** en la **Universidad de la Frontera (UFRO)**. El propósito de este módulo es robustecer la lógica de negocio, el registro de usuarios y garantizar la integridad de los datos de los estudiantes y sus inventarios.
+
+## Integrantes
+* Katherine Llanquinao Gallardo
+* Luis Arias Quezada
+* Patricio Huenchuman Calful
+
+## 🛠️ Desarrollo de la Rama (Avance Actual)
+
+* **Modelado y Lógica de Usuario (`Usuario.java`):** Implementación y optimización de la clase base `Usuario`. Se refinaron los atributos de seguridad (nombre y contraseña) y se estructuró el comportamiento para diferenciar correctamente los roles de *Estudiante* y *Administrador*.
+* **Control de Negocio e Inventario:** Desarrollo de métodos específicos en el `Main` y controladores para asociar dinámicamente un estudiante a un casillero único, validando que las credenciales no sean nulas o vacías mediante cláusulas de guarda.
+* **Persistencia de Datos (JSON):** Integración de lógica para guardar el estado actual de los casilleros y sus respectivos objetos asignados, permitiendo mantener la información guardada de manera local entre ejecuciones del programa.
+
+### Resumen Técnico del Avance
+Aplicación estricta de principios **POO** (Herencia, Encapsulación y Asociación), migración y orden del entorno mediante **Maven**, y gestión limpia del repositorio a través de commits atómicos en esta rama.
 
 ---
 
-## 📋 Requisitos del Avance 02
-
-Este repositorio contiene el prototipo funcional correspondiente al **Avance 02**, cumpliendo con los siguientes lineamientos de diseño:
-- **Modelo de Dominio Robusto:** Implementación lógica encapsulada de entidades del mundo real.
-- **Estructura Estándar de la Industria:** Organización limpia bajo el árbol de fuentes `src/main/java/modelo`.
-- **Preparación Arquitectónica:** Código desacoplado listo para la integración de Interfaces Gráficas de Usuario (GUI) y persistencia de datos (Archivos locales).
-
----
-## Descripción del Modelo de Clases
-1. Usuario
-Modela a los estudiantes registrados en la institución facultados para solicitar el uso de casillas seguros.
-- Atributos: rut (String), nombre (String), correo (String), carrera (String).
-- Encapsulamiento: Todos los atributos son privados (private) con acceso controlado mediante métodos Getters y Setters.
-
-2. Casillero
-Representa los casilleros físicos distribuidos en la universidad.
-- Atributos: idCasillero (String), estado (String: Disponible, Ocupado, Mantenimiento), inventario (List).
-- Relación: Mantiene una relación de Asociación/Agregación con la clase ObjetoInventario para monitorear qué elementos contiene en tiempo real de forma dinámica.
-  
-3. ObjetoInventario
-Clase que permite declarar y categorizar los artículos individuales que introduce un alumno para resguardo.
-- Atributos: idObjeto (String), descripcion (String), categoria (String).
-  
-4. AsignacionCasillero
-Clase de relación que actúa como registro o contrato entre un estudiante y un espacio físico específico.
-- Atributos: estudiante (Usuario), casillero (Casillero), fechaAsignacion (LocalDate).
-- Lógica de Negocio: Al instanciarse, modifica de forma automática el estado del casillero vinculado a "Ocupado".
-
-## 🏗️ Estructura del Proyecto
-
-La arquitectura del código fuente sigue la jerarquía recomendada para proyectos Java estructurados:
-
-```text
-src/
-└── main/
-    └── java/
-        ├── modelo/                 # Paquete principal del dominio
-        │   ├── Usuario.java             # Entidad del estudiante universitario
-        │   ├── Casillero.java           # Control de estado y capacidad física
-        │   ├── ObjetoInventario.java    # Gestión de pertenencias guardadas
-        │   └── AsignacionCasillero.java # Registro transaccional de uso
-        └── Main.java               # Punto de entrada y simulación del sistema
-
+## Próximos Pasos 
+- [ ] Finalizar las pruebas unitarias para el inicio de sesión.
+- [ ] Validar la persistencia cuando se limpian los casilleros por completo.
+- [ ] Realizar el Merge limpio hacia la rama `main` tras la aprobación del equipo.
