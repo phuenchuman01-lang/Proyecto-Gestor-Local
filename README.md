@@ -1,6 +1,5 @@
-<div align="center">
-  <img src="https://raw.githubusercontent.com/ufrontera/logos/master/ufro-logo.png" alt="Universidad de la Frontera" width="500"/>
-</div>
+<img width="389" height="141" alt="image" src="https://github.com/user-attachments/assets/ead7f30b-e5f9-4dac-8fe2-64e4bafa98a1" />
+
 
 # Proyecto Local Gestor - Rama: dev-kathy/casillas-seguras
 
