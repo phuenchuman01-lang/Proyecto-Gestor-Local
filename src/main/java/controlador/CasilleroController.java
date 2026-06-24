@@ -3,13 +3,16 @@ package controlador;
 import modelo.Casillero;
 import persistencia.JsonManager;
 import java.util.List;
+import modelo.HistorialCambios;
 
 public class CasilleroController {
 
     private final List<Casillero> listaCasilleros;
+    private final HistorialCambios historial;
 
     public CasilleroController() {  //Carga los 10 casilleros disponibles de forma automatica.
         this.listaCasilleros = JsonManager.cargarCasilleros();
+        this.historial = HistorialCambios.getInstance();
     }
 
     public List<Casillero> obtenerTodosLosCasilleros() {        //Retorna los casilleros para la vista del admin.
@@ -31,6 +34,9 @@ public class CasilleroController {
 
     public void registrarCasillero(int numero, String username) {
         Casillero c = obtenerCasilleroPorNumero(numero);
+
+        //Cambiar las IllegalArgumentException e IllegalStateException por las excepciones personalizadas creadas
+
         if (c == null) throw new IllegalArgumentException("Casillero no existente");
 
         if (!c.estaDisponible()){
