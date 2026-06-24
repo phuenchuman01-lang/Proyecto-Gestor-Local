@@ -50,18 +50,25 @@ public class CasilleroController {
 
         c.ocupar(username);
         JsonManager.guardarCasilleros(listaCasilleros);
+
+        historial.registrarAccion(username, "Registró y ocupó el casillero", numero);
     }
 
     public void agregarObjetoACasillero(int numero, String objeto) {
+        // Cambiar excepción por CasilleroNoEncontradoException
         Casillero c = obtenerCasilleroPorNumero(numero);
         if (c == null) throw new IllegalArgumentException("Casillero no encontrado.");
 
         c.agregarObjeto(objeto);
         JsonManager.guardarCasilleros(listaCasilleros);
+
+        String user = (c.getUsernameDueño() != null) ? c.getUsernameDueño() : "Admin";
+        historial.registrarAccion(user, "Agregó el objeto: " + objeto, numero);
     }
 
     public void quitarObjetoDeCasillero(int numero, String objeto) {
         Casillero c = obtenerCasilleroPorNumero(numero);
+        //Cambiar excepción
         if (c == null) throw new IllegalArgumentException("Casillero no encontrado.");
 
         boolean eliminado = c.quitarObjeto(objeto);
@@ -69,14 +76,21 @@ public class CasilleroController {
             throw new IllegalArgumentException("El objeto no existía en el casillero.");
         }
         JsonManager.guardarCasilleros(listaCasilleros);
+
+        String user = (c.getUsernameDueño() != null) ? c.getUsernameDueño() : "Admin";
+        historial.registrarAccion(user, "Quitó el objeto: " + objeto, numero);
     }
 
     public void liberarCasillero(int numero) {
         Casillero c = obtenerCasilleroPorNumero(numero);
+        //Cambiar excepción
         if (c == null) throw new IllegalArgumentException("Casillero no encontrado.");
+        String exDueño = c.getUsernameDueño();
 
         c.liberar();
         JsonManager.guardarCasilleros(listaCasilleros);
+
+        historial.registrarAccion(exDueño != null ? exDueño : "Admin", "Liberó el casillero", numero);
     }
 
     // ==========================================
@@ -86,7 +100,7 @@ public class CasilleroController {
     public void moverContenidoDeCasillero(int numeroOrigen, int numeroDestino) {
         Casillero origen = obtenerCasilleroPorNumero(numeroOrigen);
         Casillero destino = obtenerCasilleroPorNumero(numeroDestino);
-
+        // Cambiar excepciones genéricas por personalizadas
         if (origen == null || destino == null) {
             throw new IllegalArgumentException("Uno o ambos casilleros no han sido encontrados.");
         }
@@ -109,11 +123,13 @@ public class CasilleroController {
 
         origen.liberar();
         JsonManager.guardarCasilleros(listaCasilleros);
+
+        historial.registrarAccion("Admin", "Movió el contenido completo al casillero #" + numeroDestino, numeroOrigen);
     }
 
     public void enlazarEstudianteACasillero(int numero, String username) {
         Casillero c = obtenerCasilleroPorNumero(numero);
-
+        // Cambiar excepciones
         if (c == null) throw new IllegalArgumentException("Casillero no encontrado.");
         if (!c.estaDisponible()) throw  new IllegalStateException("El casillero se encuentra ocupado");
 
@@ -123,6 +139,8 @@ public class CasilleroController {
         }
         c.ocupar(username);
         JsonManager.guardarCasilleros(listaCasilleros);
+
+        historial.registrarAccion("Admin", "Enlazó forzosamente el casillero al estudiante " + username, numero);
     }
 
     //metodo auxiliar
