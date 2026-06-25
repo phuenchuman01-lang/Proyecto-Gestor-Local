@@ -13,7 +13,7 @@ public class JsonManager {
 
     private static final String RUTA_USUARIOS = "usuarios.json";
     private static final String RUTA_CASILLEROS = "casilleros.json";
-
+    private static final String RUTA_HISTORIAL = "historial.json";
     // ==========================================
     //   MÉTODOS PARA USUARIOS
     // ==========================================
@@ -165,6 +165,21 @@ public class JsonManager {
         return lista;
     }
 
+    // ==========================================
+    //   MÉTODOS PARA HISTORIAL (AUDITORÍA)
+    // ==========================================
+
+    // Implementar el guardado de la lista de strings en historial.json
+    public static void guardarHistorial(List<String> historial) {
+        // Usar un StringBuilder y el método escribirArchivo()
+    }
+
+    // Implementar la lectura de historial.json y retornar la lista
+    public static List<String> cargarHistorial() {
+        List<String> lista = new ArrayList<>();
+        // Usa el método leerArchivo(). Si retorna null, devuelve la lista vacía.
+        return lista;
+    }
     // ==========================================
     //   MANEJO DE ENTRADA Y SALIDA (I/O)
     // ==========================================
