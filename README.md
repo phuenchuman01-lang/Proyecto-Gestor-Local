@@ -19,24 +19,16 @@ Este repositorio contiene el proyecto en equipo realizado en la asignatura de Pr
 
 
 ## Desarrollo Avance 1
-
+**Resumen:** Primera version basada en ventanas y navegabilidad de Interfaz Grafica de Usuario [GUI].
 * Implementacion de ventanas y botones utiles para el manejo de la interfaz de usuario dependiendo de su rol dentro del proyecto [>main.controlador.controlador.vista + Launcher.java], tambien la creacion del archivo main.controlador.controlador.launcher. Desarrollo realizado por Patricio.   
 * Aplicacion de logica para distincion de usuarios [Usuario.java], diferenciar entre un usuario alumno o un usuario docente para dirigir a su respectiva ventana de menu, y creacion de cajas de texto para insertar nombre y contraseña a una nueva cuenta. Desarrollo realizado por Katherine.   
 * Agregacion de clausulas para el control de sesiones [SessionController.java], cuya funcion prohibe ciertas caracteristics a la hora de crear una cuenta. como un nombre y contraseña vacios, y crear un nuevo alumno con cada registro de cuenta. Desarrollo realizado por Luis.   
 
-### Resumen Avance 1  
-
-Primera version basada en ventanas y navegabilidad de Interfaz Grafica de Usuario [GUI].
-
 ## Desarrollo avance 2  
-
+**Resumen:** Aplicacion de logica y navegabilidad para que el programa cumpla con su proposito de gestionar casilleros para los usuarios Alumno.
 * Aplicacion de logica, conexion y mejora de navegacion dentro del programa. Donde ahora se cumple con el proposito de cada rol Estudiante o Admin, asignar y gestionar 1 entre 10 casilleros disponibles, ingresar objetos y mantener persistencia en los datos del casillero asignado, su usuario relacionado, y los objetos que contiene en un Json.
 * Aplicacion de conceptos de Herencia, Diagramas UML aprendidos en clase.
 * Cambio a entorno Maven.
-
-### Resumen avance 2
-
-Aplicacion de logica y navegabilidad para que el programa cumpla con su proposito de gestionar casilleros para los usuarios Alumno.
 
 ## Desarrollo Avance 3
 
