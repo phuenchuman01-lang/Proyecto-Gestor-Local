@@ -15,8 +15,18 @@ Este repositorio contiene el proyecto en equipo realizado en la asignatura de Pr
 - [Patricio Huenchuman Calful](https://github.com/phuenchuman01-lang)
 
 > [!NOTE]
-> El programa esta habilitado para usar, activando el Launcher dentro de src/
+> El programa esta habilitado para usar, activando el Launcher dentro de la carpeta src/main/java/launcher
 
+---
+
+### How To Use
+
+Al iniciar el programa, se te pedira un usuario y una contraseña la cual debes crear para ingresar a la ventana principal. Hay una distincion entre un usuario Alumno y Admin.
+
+> [!CAUTION]
+> Todas las cuentas creadas en el Login son consideradas Usuario **ALUMNO**, solo **existe una unica cuenta ADMIN** con una contraseña fija. 
+
+---
 
 ## Desarrollo Avance 1
 **Resumen:** Primera version basada en ventanas y navegabilidad de Interfaz Grafica de Usuario [GUI].
