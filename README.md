@@ -4,15 +4,18 @@
 
 # Proyecto Local Gestor
 
-Este repositorio contiene el proyecto en equipo realizado en la asignatura de Programacion Orientada a Objetos (POO) en la Universidad de la Frontera (UFRO). una App para el manejo y distribucion de inventario para casilleros. El funcionamiento principal de nuestra app Local Gestor es que los estudiantes puedan registrarse a una cuenta con nombre y contraseña, asignar su casillero correspondiente, y organizar su inventario personal. con el apoyo de los creadores y funcionarios. El proyecto aun sigue en desarrollo...
+Este repositorio contiene el proyecto en equipo realizado en la asignatura de **Programacion Orientada a Objetos (POO)** en la **Universidad de la Frontera (UFRO)**. una app para la **gestion de inventario** para casilleros. El funcionamiento principal de nuestra app Local Gestor es que los estudiantes puedan registrarse a una cuenta con nombre y contraseña, asignar su casillero correspondiente, y organizar su inventario personal. con el apoyo de los creadores y funcionarios. El proyecto aun sigue en desarrollo...
 
 > **Version:** Beta  
 > **Status:** Done
 
 ### Integrantes
-- [Katherine Llanquinao Gallardo](https://github.com/Katherine23015)
-- [Luis Arias Quezada](https://github.com/Lgarias11)
-- [Patricio Huenchuman Calful](https://github.com/phuenchuman01-lang)
+
+| Nombre | Rol en el equipo |
+|---|---|
+| [Katherine Llanquinao Gallardo](https://github.com/Katherine23015) | GUI+estructura |
+| [Luis Arias Quezada](https://github.com/Lgarias11) | Logica+tester |
+| [Patricio Huenchuman Calful](https://github.com/phuenchuman01-lang) | Vistas+navegabilidad |
 
 > [!NOTE]
 > El programa esta habilitado para usar, activando el Launcher dentro de la carpeta src/main/java/launcher
@@ -24,7 +27,14 @@ Este repositorio contiene el proyecto en equipo realizado en la asignatura de Pr
 Al iniciar el programa, se te pedira un usuario y una contraseña la cual debes crear para ingresar a la ventana principal. Hay una distincion entre un usuario Alumno y Admin.
 
 > [!CAUTION]
-> Todas las cuentas creadas en el Login son consideradas Usuario **ALUMNO**, solo **existe una unica cuenta ADMIN** con una contraseña fija. 
+> Todas las cuentas creadas en el Login son consideradas Usuario **ALUMNO**, solo **existe una unica cuenta ADMIN** con una contraseña fija.
+
+### Roles de usuario
+ 
+| Rol | Permisos |
+|---|---|
+| `Admin` | Gestionar todos los casilleros disponibles, añadir o borrar objetos, enlazar con otros usuarios Alumno y tener privilegio de edicion libre de cada casillero. |
+| `Alumno` | Asignar y gestionar un unico casillero bajo su nombre y responsabilidad. |
 
 ---
 
