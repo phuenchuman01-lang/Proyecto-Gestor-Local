@@ -171,7 +171,14 @@ public class JsonManager {
 
     // Implementar el guardado de la lista de strings en historial.json
     public static void guardarHistorial(List<String> historial) {
-        // Usar un StringBuilder y el método escribirArchivo()
+        StringBuilder sb = new StringBuilder("[\n");
+        for (int indiceRegistro = 0; indiceRegistro < historial.size(); indiceRegistro++) {
+            sb.append("  \"").append(historial.get(indiceRegistro)).append("\"");
+            if (indiceRegistro < historial.size() - 1) sb.append(",");
+            sb.append("\n");
+        }
+        sb.append("]");
+        escribirArchivo(RUTA_HISTORIAL, sb.toString());
     }
 
     // Implementar la lectura de historial.json y retornar la lista
