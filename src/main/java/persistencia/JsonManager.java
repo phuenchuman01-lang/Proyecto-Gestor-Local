@@ -184,7 +184,23 @@ public class JsonManager {
     // Implementar la lectura de historial.json y retornar la lista
     public static List<String> cargarHistorial() {
         List<String> lista = new ArrayList<>();
-        // Usa el método leerArchivo(). Si retorna null, devuelve la lista vacía.
+        String contenido = leerArchivo(RUTA_HISTORIAL);
+
+        if (contenido == null || contenido.trim().isEmpty() || contenido.equals("[\n]")) {
+            return lista; // Retorna lista vacía si no hay archivo o está vacío
+        }
+
+        String[] lineas = contenido.split("\n");
+        for (String linea : lineas) {
+            linea = linea.trim();
+            if (linea.startsWith("\"")) {
+                int inicio = linea.indexOf("\"") + 1;
+                int fin = linea.lastIndexOf("\"");
+                if (inicio > 0 && fin > inicio) {
+                    lista.add(linea.substring(inicio, fin));
+                }
+            }
+        }
         return lista;
     }
     // ==========================================
