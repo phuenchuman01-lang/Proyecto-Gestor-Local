@@ -16,9 +16,8 @@ public class CasilleroController {
     }
 
     public List<Casillero> obtenerTodosLosCasilleros() {        //Retorna los casilleros para la vista del admin.
-        return this.listaCasilleros;
+        return java.util.Collections.unmodifiableList(this.listaCasilleros);
     }
-
     public Casillero buscarCasilleroPorEstudiante(String username) {    // Busca si un estudiante ya posee un casillero asignado
         for (Casillero c : listaCasilleros) {
             if (c.getUsernameDueño() != null && c.getUsernameDueño().equals(username)) {
