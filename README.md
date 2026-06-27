@@ -4,7 +4,7 @@
 
 # Proyecto Local Gestor
 
-Este repositorio contiene el proyecto en equipo realizado en la asignatura de **Programacion Orientada a Objetos (POO)** en la **Universidad de la Frontera (UFRO)**. una app para la **gestion de inventario** para casilleros. El funcionamiento principal de nuestra app Local Gestor es que los estudiantes puedan registrarse a una cuenta con nombre y contraseña, asignar su casillero correspondiente, y organizar su inventario personal. con el apoyo de los creadores y funcionarios. El proyecto aun sigue en desarrollo...
+Este repositorio contiene el proyecto en equipo realizado en la asignatura de **Programacion Orientada a Objetos (POO)** en la **Universidad de la Frontera (UFRO)**. un software para la **gestion de inventario** para casilleros. El funcionamiento principal de nuestro software Local Gestor es gestionar casilleros para fines academicos, se pueden enmarcar objetos dentro de un casillero asignado con un numero, los objetos deben ser supervisados tanto por docentes como por alumnos de una facultad que requiera del uso de casilleros frecuentemente.
 
 > **Version:** Beta  
 > **Status:** Done
@@ -22,9 +22,9 @@ Este repositorio contiene el proyecto en equipo realizado en la asignatura de **
 
 ---
 
-### How To Use
+## How To Use
 
-Al iniciar el programa, se te pedira un usuario y una contraseña la cual debes crear para ingresar a la ventana principal. Hay una distincion entre un usuario Alumno y Admin.
+Al iniciar el programa, se te pedira un usuario y una contraseña la cual debes crear para ingresar a la ventana principal. Hay una distincion entre un usuario Alumno y Admin. El usuario Alumno tendra la privilegio sobre uno de los casilleros disponibles, el cual son 10 por defecto.
 
 > [!CAUTION]
 > Todas las cuentas creadas en el Login son consideradas Usuario **ALUMNO**, solo **existe una unica cuenta ADMIN** con una contraseña fija.
@@ -35,6 +35,44 @@ Al iniciar el programa, se te pedira un usuario y una contraseña la cual debes 
 |---|---|
 | `Admin` | Gestionar todos los casilleros disponibles, añadir o borrar objetos, enlazar con otros usuarios Alumno y tener privilegio de edicion libre de cada casillero. |
 | `Alumno` | Asignar y gestionar un unico casillero bajo su nombre y responsabilidad. |
+
+### Arquitectura de Proyecto
+
+```
+Local Gestor
+│   pom.xml
+│   usuarios.json								#Archivo .json principal que guarda a los usuarios y sus casilleros.
+│
+├───src
+   ├───main
+   │   └───java
+   │       ├───controlador						#Controladores dentro del programa
+   │       │       CasilleroController.java
+   │       │       SessionController.java
+   │       │
+   │       ├───launcher
+   │       │       Launcher.java				#Iniciar el programa aquí.
+   │       │
+   │       ├───main
+   │       │       Main.java
+   │       │
+   │       ├───modelo
+   │       │       Casillero.java
+   │       │       Docente.java
+   │       │       Estudiante.java
+   │       │       Usuario.java
+   │       │
+   │       ├───persistencia
+   │       │       JsonManager.java				#Clase lector de Json
+   │       │
+   │       └───vista							#Ventanas del programa.
+   │               MenuDocente.java
+   │               MenuEstudiante.java
+   │               VentanaLogin.java
+   │               VentanaRegistro.java
+   │
+   └───test									#Carpeta de pruebas unitarias.
+```
 
 ---
 
@@ -47,7 +85,7 @@ Al iniciar el programa, se te pedira un usuario y una contraseña la cual debes 
 ## Desarrollo avance 2  
 **Resumen:** Aplicacion de logica y navegabilidad para que el programa cumpla con su proposito de gestionar casilleros para los usuarios Alumno.
 * Aplicacion de logica, conexion y mejora de navegacion dentro del programa. Donde ahora se cumple con el proposito de cada rol Estudiante o Admin, asignar y gestionar 1 entre 10 casilleros disponibles, ingresar objetos y mantener persistencia en los datos del casillero asignado, su usuario relacionado, y los objetos que contiene en un Json.
-* Aplicacion de conceptos de Herencia, Diagramas UML aprendidos en clase.
+* Aplicacion de conceptos de Herencia en las clases de Usuario como la superclase, y las subclases Alumno y Docente, Diagramas UML aprendidos en clase gracais a visual paradigm.
 * Cambio a entorno Maven.
 
 ## Desarrollo Avance 3
