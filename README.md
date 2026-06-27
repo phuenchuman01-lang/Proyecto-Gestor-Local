@@ -29,7 +29,7 @@ Al iniciar el programa, se te pedira un usuario y una contraseña la cual debes 
 > [!CAUTION]
 > Todas las cuentas creadas en el Login son consideradas Usuario **ALUMNO**, solo **existe una unica cuenta ADMIN** con una contraseña fija.
 
-![Login](images/CapturaLogin.png)
+![Login](Images/CapturaLogin.png)
 
 ### Roles de usuario
  
