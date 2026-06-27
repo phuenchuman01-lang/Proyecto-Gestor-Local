@@ -29,7 +29,7 @@ Al iniciar el programa, se te pedira un usuario y una contraseña la cual debes 
 > [!CAUTION]
 > Todas las cuentas creadas en el Login son consideradas Usuario **ALUMNO**, solo **existe una unica cuenta ADMIN** con una contraseña fija.
 
-![Login](Images/CapturaLogin.png)
+![Login](Images/CapturaLogin.png)  
 
 ### Roles de usuario
  
@@ -37,6 +37,14 @@ Al iniciar el programa, se te pedira un usuario y una contraseña la cual debes 
 |---|---|
 | `Admin` | Gestionar todos los casilleros disponibles, añadir o borrar objetos, enlazar con otros usuarios Alumno y tener privilegio de edicion libre de cada casillero. |
 | `Alumno` | Asignar y gestionar un unico casillero bajo su nombre y responsabilidad. |
+
+### Preview de Menus de Alumno y de Docente
+| Ventanas de Alumno | Ventanas de Docente |
+|---|---|
+| ![usuarioAlumno](Images/Captura-usuario-Alumno.png) | ![usuarioDocente](Images/Captura-usuario-Docente.png) |
+| ![GestionusuarioAlumno](Images/Captura-Gestion-casillero-Alumno-Ejemplo.png) | ![GestionusuarioDocente](Images/Captura-Gestion-casillero-Docente-Ejemplo.png) |
+
+
 
 ### Arquitectura de Proyecto
 
